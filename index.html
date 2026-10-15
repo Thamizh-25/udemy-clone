@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore online learning courses in programming, design and technology.">
+    <title>Udemy Clone | Online Learning</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Project Files -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar__s1">
+            <a href="#home" class="navbar__brand">udemy</a>
+            <a href="#categories" class="navbar__link">Explore</a>
+        </div>
+
+        <form class="navbar__search" id="searchForm" role="search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input id="courseSearch" type="search"
+                placeholder="Search for anything"
+                aria-label="Search courses">
+            <button type="button" id="clearSearch"
+                class="clear-search" aria-label="Clear search" hidden>
+                &times;
+            </button>
+        </form>
+
+        <nav class="navbar__s3" aria-label="Main navigation">
+            <a href="#business" class="navbar__link">Udemy Business</a>
+            <a href="#teach" class="navbar__link">Teach on Udemy</a>
+
+            <a href="#cart" class="navbar__icon" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            <a href="#login" class="navbar__button navbar__login">Log in</a>
+            <a href="#signup" class="navbar__button navbar__signup">Sign up</a>
+
+            <button class="navbar__icon navbar__language"
+                type="button" aria-label="Language">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- CATEGORY MENU -->
+    <nav class="categories" id="categories" aria-label="Course categories">
+        <a href="#development">Development</a>
+        <a href="#business">Business</a>
+        <a href="#finance">Finance & Accounting</a>
+        <a href="#it">IT & Software</a>
+        <a href="#design">Design</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#lifestyle">Lifestyle</a>
+        <a href="#photography">Photography & Video</a>
+    </nav>
+
+    <main id="home">
+
+        <!-- HERO BANNER -->
+        <section class="hero">
+            <div class="hero__content">
+                <p class="hero__eyebrow">LEARN WITHOUT LIMITS</p>
+                <h1>Skills for a better future</h1>
+                <p>Learn in-demand skills with courses inspired by real-world learning.</p>
+                <a href="#recommended" class="hero__button">Explore courses</a>
+            </div>
+        </section>
+
+        <!-- RECOMMENDED COURSES -->
+        <section class="courses" id="recommended">
+            <div class="courses__heading">
+                <div>
+                    <h2>Recommended Courses</h2>
+                    <p>Start learning from our featured courses.</p>
+                </div>
+
+                <label class="sort-control">
+                    Sort courses
+                    <select class="courseSort" aria-label="Sort recommended courses">
+                        <option value="default">Recommended</option>
+                        <option value="rating">Highest rated</option>
+                        <option value="reviews">Most reviews</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                    </select>
+                </label>
+            </div>
+
+            <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+            <div class="course-container" id="courseContainer">
+
+                <article class="course-card"
+                    data-title="web development html css javascript"
+                    data-rating="4.8" data-reviews="12450" data-price="449">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500"
+                        alt="Web development workspace" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>The Complete Web Development Bootcamp</h3>
+                        <p class="instructor">Dr. Angela Yu</p>
+                        <p class="rating"><strong>4.8</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(12,450 reviews)</span></p>
+                        <p class="price">₹449</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="python data science machine learning programming"
+                    data-rating="4.7" data-reviews="8420" data-price="499">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500"
+                        alt="Programming code" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>Python for Data Science and Machine Learning</h3>
+                        <p class="instructor">Jose Portilla</p>
+                        <p class="rating"><strong>4.7</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(8,420 reviews)</span></p>
+                        <p class="price">₹499</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="data analytics visualization statistics"
+                    data-rating="4.6" data-reviews="5870" data-price="399">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500"
+                        alt="Data analytics dashboard" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>Data Analytics and Visualization</h3>
+                        <p class="instructor">Alex The Analyst</p>
+                        <p class="rating"><strong>4.6</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(5,870 reviews)</span></p>
+                        <p class="price">₹399</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="ui ux design user interface user experience"
+                    data-rating="4.5" data-reviews="3870" data-price="349">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500"
+                        alt="Design and analytics workspace" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>UI/UX Design Fundamentals</h3>
+                        <p class="instructor">Mizko</p>
+                        <p class="rating"><strong>4.5</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(3,870 reviews)</span></p>
+                        <p class="price">₹349</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="empty-message" id="recommendedEmpty" hidden>
+                No recommended courses found.
+            </p>
+        </section>
+
+        <!-- POPULAR COURSES -->
+        <section class="courses popular-courses" id="popular">
+            <div class="courses__heading">
+                <div>
+                    <h2>Popular Courses</h2>
+                    <p>Discover popular courses by ratings and reviews.</p>
+                </div>
+
+                <label class="sort-control">
+                    Sort courses
+                    <select class="courseSort" aria-label="Sort popular courses">
+                        <option value="default">Recommended</option>
+                        <option value="rating">Highest rated</option>
+                        <option value="reviews">Most reviews</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="course-container" id="popularCourseContainer">
+
+                <article class="course-card"
+                    data-title="javascript developer programming web development"
+                    data-rating="4.9" data-reviews="9240" data-price="599">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500"
+                        alt="Online learning workspace" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>The Complete JavaScript Developer Course</h3>
+                        <p class="instructor">Jonas Schmedtmann</p>
+                        <p class="rating"><strong>4.9</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(9,240 reviews)</span></p>
+                        <p class="price">₹599</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="graphic design photoshop creative design"
+                    data-rating="4.7" data-reviews="6310" data-price="399">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=500"
+                        alt="Graphic design workspace" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>Graphic Design Masterclass</h3>
+                        <p class="instructor">Daniel Walter Scott</p>
+                        <p class="rating"><strong>4.7</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(6,310 reviews)</span></p>
+                        <p class="price">₹399</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="cybersecurity ethical hacking network security"
+                    data-rating="4.8" data-reviews="7120" data-price="549">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500"
+                        alt="Cybersecurity technology" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>Cybersecurity and Ethical Hacking</h3>
+                        <p class="instructor">Jason Dion</p>
+                        <p class="rating"><strong>4.8</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(7,120 reviews)</span></p>
+                        <p class="price">₹549</p>
+                    </div>
+                </article>
+
+                <article class="course-card"
+                    data-title="digital marketing seo social media marketing"
+                    data-rating="4.6" data-reviews="4560" data-price="299">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500"
+                        alt="Digital marketing analytics" loading="lazy">
+                    <div class="course-card__content">
+                        <h3>Digital Marketing and SEO Essentials</h3>
+                        <p class="instructor">Alex Genadinik</p>
+                        <p class="rating"><strong>4.6</strong>
+                            <span class="stars" aria-label="5 stars">★★★★★</span>
+                            <span class="reviews">(4,560 reviews)</span></p>
+                        <p class="price">₹299</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="empty-message" id="popularEmpty" hidden>
+                No popular courses found.
+            </p>
+        </section>
+
+        <!-- TOPIC SUGGESTIONS -->
+        <section class="learning" id="topics">
+            <h2>Explore Popular Topics</h2>
+            <p>Suggest a topic you'd like to learn about.</p>
+
+            <form id="topicForm" class="topic-form">
+                <input id="topicInput" type="text"
+                    placeholder="Suggest a topic, e.g. Cloud Computing"
+                    aria-label="New topic" maxlength="50" required>
+                <button type="submit">Add Topic</button>
+            </form>
+
+            <p id="topicMessage" class="topic-message" aria-live="polite"></p>
+
+            <div class="topic-container" id="topicContainer">
+                <a href="#recommended" class="topic">Web Development</a>
+                <a href="#recommended" class="topic">Python</a>
+                <a href="#recommended" class="topic">JavaScript</a>
+                <a href="#popular" class="topic">UI/UX Design</a>
+                <a href="#popular" class="topic">Cybersecurity</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div>
+                <h3>About this project</h3>
+                <p>An educational front-end clone inspired by online learning websites.</p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <a href="#recommended">Recommended Courses</a>
+                <a href="#popular">Popular Courses</a>
+                <a href="#topics">Popular Topics</a>
+            </div>
+
+            <div>
+                <h3>Information</h3>
+                <a href="#home">Back to Top</a>
+                <a href="#categories">Course Categories</a>
+            </div>
+        </div>
+
+        <p class="footer__copyright">
+            &copy; 2026 Udemy Clone. Created for educational purposes.
+        </p>
+    </footer>
+
+</body>
+</html>
